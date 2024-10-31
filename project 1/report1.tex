@@ -1,0 +1,96 @@
+%Template file for Scientific Computation project 1 discussion and figures
+\documentclass{article}
+\usepackage[a4paper, margin=1in]{geometry}
+\title{Scientific Computation Project 1}
+\usepackage{minted}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\newcommand{\trm}{\textrm}
+\newcommand{\pa}{\partial}
+\author{\emph{Your college ID here}}
+
+\usepackage{graphicx}
+
+\begin{document}
+
+\maketitle
+
+%---------------- Part 1  -------------------
+\hrule
+\hrule
+
+\subsection*{Part 1}
+
+
+\subsubsection*{1.}
+%Place your discussion for question 1 here
+1(a) Method 1 is a simple linear search,
+where it iterates through the list L and checks if x is present.
+Method 2 sorts the list of IDs using merge sort first if the list is not sorted, 
+then performs a binary search to find the element. \\
+1(b) Method 1: O(mn) since it's a simple linear search with m multiple times using
+the results from lecture notes. \\
+Method2: For the worst case, we need to sort the list with complexity O(nlog2n),
+then apply binary search with complexity O(mlog2n).
+Hence, the total complexity is O((m+n)log2n). 
+2. To compare the performance of method1 and method2, we can fix either the size of
+m or n and compare O(mn) with O((m+n)log2n). 
+Firstly, we fix the value of n (I use n=100 and 10000 for the code), and results are shown
+in Figure 1 and Figure 2. The results show that for small m (m < 150 in the graphs),
+method2 is a little bit slower than method1. This can be seen by the mathematical
+comparsion of O(mn) and O((m+n)log2n), or by the consideration of the cost of the merge sort
+in method2. As the size of m increases, method1 takes much longer time than method2 shown
+in the graphs. This is because O(mn) is much bigger than O((m+n)log2n) if we fix the value of
+n for large m. Hence, the results shown in the graphs agree with our theoratical results.
+Now, we fix the value of m (I use m=10 and 1000 for the code), and the result is shown
+in Figure 3 and Figure 4. For m=10 (i.e. m is small), the results show that there is not much
+difference between method1 and method2 as expected for small n. As the size of n increases,
+method2 becomes much slower than method1 shown in the graph, since O((m+n)log2n) is much bigger than O(mn)
+in this case. For m=1000 (i.e. m is large), as the increase of n, method2 is much faster than method1
+as expected from the comparison of O(mn) and O((m+n)log2n). Hence, the results shown in the graphs also agree
+with our theoratical reslts.  
+
+
+
+
+
+
+\subsubsection*{2.}
+%Place your discussion for question 2 here
+
+
+\begin{figure}[h!]
+\centering
+%Uncomment line below to display figure saved as fig1.png
+\includegraphics[width=0.8\textwidth]{fig1.png}
+
+\caption{Figure 1: Add figure description here}
+\label{fig1}
+\end{figure}
+
+%Add additional figure if needed
+
+
+
+%---------------- End Part 1 -------------------
+
+\vspace{0.25in}
+
+%---------------- Part 2  -------------------
+\subsection*{Part 2}
+
+\subsubsection*{2.}
+
+%Place your discussion for question 2 here}
+%---------------- End Part 2 -------------------
+
+
+\hrule
+\hrule
+
+
+
+%---------------- End document -------------------
+
+
+\end{document}
